@@ -8,13 +8,13 @@ plot1 <- function(){
        colnames(data) <- c("year","Emissions")
        
        ##draw line diagram
-       plot(data$year, data1$Emissions/1000000, type="l", xlab="Year", ylab="Emissions", main="Total emissions by years", axes=FALSE, col="steelblue")
+       plot(data$year, data$Emissions/1000000, type="l", xlab="Year", ylab="Emissions", main="Total emissions by years", axes=FALSE, col="steelblue")
        
        ##set x-axis
        axis(1, at=data$year, labels=c("1999", "2002", "2005", "2008"))
        
        ##set y-axis
-       pts<-pretty(data1$Emissions/1000000)
+       pts<-pretty(data$Emissions/1000000)
        axis(2, at = pts, labels = paste(pts, "M", sep = ""))
        
        ##draw diagram frame
