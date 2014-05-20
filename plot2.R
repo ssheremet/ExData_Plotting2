@@ -3,7 +3,7 @@ plot2 <- function(){
        ##read data from file
        NEI <- readRDS("summarySCC_PM25.rds")
        
-       ##filter data by fips
+       ##filter data by fips (get data for Baltimore)
        dataFips <- NEI[NEI$fips == "24510",]
        
        ##aggregate data by years and set dim names
@@ -12,6 +12,7 @@ plot2 <- function(){
        
        ##draw line diagram
        plot(data$year, data$Emissions, type="l", xlab="Year", ylab="Emissions", main="Emissions by years in Baltimore", xaxt="n", col="steelblue")
+       points(data$year, data$Emissions, pch=2, col="steelblue")
        
        ##set x-axis
        axis(1, at=data$year, labels=c("1999", "2002", "2005", "2008"))

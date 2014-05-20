@@ -9,6 +9,7 @@ plot1 <- function(){
        
        ##draw line diagram
        plot(data$year, data$Emissions/1000000, type="l", xlab="Year", ylab="Emissions", main="Total emissions by years", axes=FALSE, col="steelblue")
+       points(data$year, data$Emissions/1000000, pch=2, col="steelblue")
        
        ##set x-axis
        axis(1, at=data$year, labels=c("1999", "2002", "2005", "2008"))
